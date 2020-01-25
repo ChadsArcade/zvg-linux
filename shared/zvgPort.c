@@ -516,7 +516,7 @@ uint zvgDetectECP( uint portAdr)
 	err = iopl(3);
 	if (err)
 	{
-		return(1);
+		return(errIOPL);
 	}
 	// look for ECP port
 

@@ -121,38 +121,39 @@ extern "C" {
 // Define some error codes
 
 enum portErrCode
-{	errOk = 0,					// no error (must be set to 0)
+{	errOk = 0,				// no error (must be set to 0)
 
-	errNoEnv,					// no 'ZVGPORT=' environment variable found
-	errEnvPort,					// port value given in environment is invalid
-	errEnvDMA,					// DMA value given in environment is invalid
-	errEnvMode,					// DMA Mode value given in environment is invalid
-	errEnvIRQ,					// IRQ value given in environment is invalid
-	errEnvMon,					// MONITOR value given in environment is invalid
-	errNoPort,					// no PORT address given
-	errNotEcp,					// ECP port not found at given address
-	errNoDma,					// No DMA given and unable to obtain from chipset
-	errInvDma,					// Invalid DMA channel
+	errNoEnv,				// no 'ZVGPORT=' environment variable found
+	errEnvPort,				// port value given in environment is invalid
+	errEnvDMA,				// DMA value given in environment is invalid
+	errEnvMode,				// DMA Mode value given in environment is invalid
+	errEnvIRQ,				// IRQ value given in environment is invalid
+	errEnvMon,				// MONITOR value given in environment is invalid
+	errNoPort,				// no PORT address given
+	errNotEcp,				// ECP port not found at given address
+	errNoDma,				// No DMA given and unable to obtain from chipset
+	errInvDma,				// Invalid DMA channel
 	errInvDmaMode,				// Invalid DMA mode
-	errNoIrq,					// No DMA given and unable to obtain from chipset
-	errInvIrq,					// Invalid IRQ level
-	errXmtErr,					// Could not send data to the ZVG during initialize test
-	errMemory,					// Out of memory!
-	errBfrFull,					// DMA buffer is full
-	errEcpWord,					// Not an 8 bit ECP
+	errNoIrq,				// No DMA given and unable to obtain from chipset
+	errInvIrq,				// Invalid IRQ level
+	errXmtErr,				// Could not send data to the ZVG during initialize test
+	errMemory,				// Out of memory!
+	errBfrFull,				// DMA buffer is full
+	errEcpWord,				// Not an 8 bit ECP
 	errEcpFailed,				// Could not negotiate for ECP mode
 	errEcpNoData,				// no data available from the peripheral
 	errEcpBadData,				// bad data (or data count) read from ZVG
 	errEcpTimeout,				// something took too long (cable disconnected? ZVG powered off?)
-	errEcpBusy,					// peripheral is too busy for us
-	errEcpComm,					// communication error
+	errEcpBusy,				// peripheral is too busy for us
+	errEcpComm,				// communication error
 	errEcpBadMode,				// trying to do something in the wrong mode
 	errEcpToSpp,				// Break in ECP Protocol (cable disconnected? ZVG powered off?)
 	errZvgRomCS,				// checksum error in ROM packet
 	errZvgRomNE,				// flash data did not match ROM packet
 	errZvgRomTI,				// flash timeout during write
 	errUnknownID,				// unknown ID string returned from request ID
-	errNotRoot					// Linux requires port driver to run as root
+	errNotRoot,				// Linux requires port driver to run as root
+	errIOPL					// Handle IOPL error rather than returning bogus "1" error code
 };
 // This structure reflects the structure inside the ZVG firmware. Note that DJGPP does not
 // pack structures by default, but the data inside the ZVG is packed.

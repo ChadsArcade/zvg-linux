@@ -174,6 +174,9 @@ void zvgError( uint err)
 		fputs( "     at the port address given in the 'ZVGPORT=' environment variable\n", stdout);
 		fputs( "     is connected to a ZVG.", stdout);
 		break;
+	case errIOPL:
+		fputs( "iopl(3) error- Unable to claim parallel port\n", stdout);
+		break;
 	}
 	fputs( "\n", stdout);
 	fflush( stdout);
